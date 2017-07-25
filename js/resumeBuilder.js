@@ -222,7 +222,7 @@ const education = {
             $(".education-entry:last").append(formattedURL);
         }
     }
-}
+};
 
 
 // INTERNATIONALIZE
