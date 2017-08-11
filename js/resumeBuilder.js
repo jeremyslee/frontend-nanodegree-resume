@@ -4,9 +4,6 @@
 const bio = {
     "name": "Jeremy Lee",
     "role": "Aspiring Software Engineer",
-    "welcomeMessage": "Hi there!",
-    "biopic": "images/fry.jpg",
-    "skills": ["telekinesis", "mind-control", "teleportation"],
     "contacts": {
         "mobile": "xxx-xxx-xxxx",
         "email": "xxx@xxx.xxx",
@@ -14,6 +11,9 @@ const bio = {
         "twitter": "twitter-username",
         "location": "Los Angeles, CA"
     },
+    "welcomeMessage": "Hi there!",
+    "skills": ["telekinesis", "mind-control", "teleportation"],
+    "biopic": "images/fry.jpg",
     "display": function() {
         let formattedHeaderRole = HTMLheaderRole.replace("%data%", bio.role);
         $("#header").prepend(formattedHeaderRole);
@@ -28,19 +28,19 @@ const bio = {
         $("#header").append(formattedWelcomeMsg);
 
         let formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        $("#topContacts").append(formattedMobile);
+        $("#topContacts, #footerContacts").append(formattedMobile);
 
         let formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        $("#topContacts").append(formattedEmail);
+        $("#topContacts, #footerContacts").append(formattedEmail);
 
         let formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
-        $("#topContacts").append(formattedGithub);
+        $("#topContacts, #footerContacts").append(formattedGithub);
 
         let formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-        $("#topContacts").append(formattedTwitter);
+        $("#topContacts, #footerContacts").append(formattedTwitter);
 
         let formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-        $("#topContacts").append(formattedLocation);
+        $("#topContacts, #footerContacts").append(formattedLocation);
 
         if (bio.skills.length > 0) {
             $("#header").append(HTMLskillsStart);
@@ -61,23 +61,23 @@ const work = {
         {
             "employer": "employer-1",
             "title": "title-1",
+            "location": "location1",
             "dates": "date - date",
-            "description": "description-1",
-            "location": "location1"
+            "description": "description-1"
         },
         {
             "employer": "employer-2",
             "title": "title-2",
+            "location": "location2",
             "dates": "date - date",
-            "description": "description-2",
-            "location": "location2"
+            "description": "description-2"
         },
         {
             "employer": "employer-3",
             "title": "title-3",
+            "location": "location3",
             "dates": "date - date",
-            "description": "description-3",
-            "location": "location3"
+            "description": "description-3"
         }
     ],
     "display": function() {
@@ -157,17 +157,17 @@ const education = {
             "name": "school-1",
             "location": "location-1",
             "degree": "degree1",
-            "degree dates": "date - date",
-            "url": "#",
-            "majors": ["major1", "major2"]
+            "majors": ["major1", "major2"],
+            "dates": "date - date",
+            "url": "#"
         },
         {
             "name": "school-2",
             "location": "location-2",
             "degree": "degree1",
-            "degree dates": "date - date",
-            "url": "#",
-            "majors": ["major1"]
+            "majors": ["major1"],
+            "dates": "date - date",
+            "url": "#"
         }
     ],
     "onlineCourses": [
